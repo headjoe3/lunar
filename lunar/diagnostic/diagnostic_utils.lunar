@@ -3,9 +3,7 @@ local BinaryOpKind = require "lunar.ast.exprs.binary_op_kind"
 local UnaryOpKind = require "lunar.ast.exprs.unary_op_kind"
 local TokenType = require "lunar.compiler.lexical.token_type"
 
-local DiagnosticUtils = {}
-
-function DiagnosticUtils.index_of(tab, val)
+export function index_of(tab, val)
   for k, v in pairs(tab) do
     if val == v then
       return k
@@ -20,7 +18,7 @@ local INSPECT_FIRST = {
   "has_colon",
 }
 
-function DiagnosticUtils.inspect_ast(tab, max_depth, _indentation)
+export function inspect_ast(tab, max_depth, _indentation)
   _indentation = _indentation or 0
   max_depth = max_depth or 10
   local tabs = string.rep("  ", _indentation)
@@ -82,5 +80,3 @@ function DiagnosticUtils.inspect_ast(tab, max_depth, _indentation)
     end
   end
 end
-
-return DiagnosticUtils

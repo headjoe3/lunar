@@ -1,6 +1,6 @@
 local BaseBinder = require "lunar.compiler.semantic.base_binder"
 local SyntaxKind = require "lunar.ast.syntax_kind"
-local DiagnosticUtils = require "lunar.utils.diagnostic_utils"
+local DiagnosticUtils = require "lunar.diagnostic.diagnostic_utils"
 local Symbol = require "lunar.compiler.semantic.symbol"
 local ClassSymbol = require "lunar.compiler.semantic.class_symbol"
 

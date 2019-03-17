@@ -1,0 +1,9 @@
+from "lunar.diagnostic.diagnostic_type" import * as DiagnosticType
+from "lunar.diagnostic.diagnostic" import * as Diagnostic
+
+return {
+  -- Binding diagnostics
+  attempt_to_redeclare_type_1 = Diagnostic.new(2000, DiagnosticType.Error, "Attempt to re-declare type '%s'"),
+  attempt_to_re_declare_static_class_field_1 = Diagnostic.new(2001, DiagnosticType.Error, "Attempt to re-declare static class field '%s'")
+  attempt_to_re_declare_class_field_1 = Diagnostic.new(2002, DiagnosticType.Error, "Attempt to re-declare class field '%s'")
+}
