@@ -1,15 +1,15 @@
-export as class Diagnostic
+export as class DiagnosticMessage
   static codes_map: table = {}
 
   code: number
   diagnostic_type: number
   format_str: string
 
-  constructor(code: number, diagnostic_type: number, format_str: string)
+  constructor(code: string, diagnostic_type: number, format_str: string)
     if Diagnostic.codes_map[code] == nil then
       Diagnostic.codes_map[code] = self
     else
-      error("Duplicate diagnostic code '%s'", code)
+      error("Duplicate DiagnosticMessage code '%s'", code)
     end
 
     self.code = code

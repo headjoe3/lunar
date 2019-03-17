@@ -1,9 +1,81 @@
 from "lunar.diagnostic.diagnostic_type" import * as DiagnosticType
-from "lunar.diagnostic.diagnostic" import * as Diagnostic
+from "lunar.diagnostic.diagnostic_message" import * as DiagnosticMessage
 
 return {
   -- Binding diagnostics
-  attempt_to_redeclare_type_1 = Diagnostic.new(2000, DiagnosticType.Error, "Attempt to re-declare type '%s'"),
-  attempt_to_re_declare_static_class_field_1 = Diagnostic.new(2001, DiagnosticType.Error, "Attempt to re-declare static class field '%s'")
-  attempt_to_re_declare_class_field_1 = Diagnostic.new(2002, DiagnosticType.Error, "Attempt to re-declare class field '%s'")
+  duplicate_identifier_1 = DiagnosticMessage.new(
+    "LNR2000",
+    DiagnosticType.Error,
+    "Duplicate identifier '%s'"
+  ),
+  duplicate_function_implementation_1 = DiagnosticMessage.new(
+    "LNR2001",
+    DiagnosticType.Error,
+    "Duplicate function implementation '%s'"
+  ),
+  duplicate_constructor_implementation = DiagnosticMessage.new(
+    "LNR2002",
+    DiagnosticType.Error,
+    "Duplicate constructor implementation"
+  ),
+  returns_cannot_be_declared_while_exporting_multiple_values = DiagnosticMessage.new(
+    "LNR2003",
+    DiagnosticType.Error,
+    "Returns cannot be declared while exporting multiple values"
+  ),
+  vararg_cannot_be_used_in_this_scope = DiagnosticMessage.new(
+    "LNR2004",
+    DiagnosticType.Error,
+    "'...' cannot be used in this scope"
+  ),
+  globals_cannot_be_declared_outside_of_root_scope = DiagnosticMessage.new(
+    "LNR2005",
+    DiagnosticMessage.Error,
+    "Globals cannot be declared outside of the root scope"
+  ),
+  packages_cannot_be_declared_outside_of_root_scope = DiagnosticMessage.new(
+    "LNR2006",
+    DiagnosticMessage.Error,
+    "Packages cannot be declared outside of the root scope"
+  ),
+  returns_cannot_be_declared_outside_of_root_scope = DiagnosticMessage.new(
+    "LNR2006",
+    DiagnosticMessage.Error,
+    "Returns cannot be declared outside of the root scope"
+  ),
+  cannot_redeclare_global_identifier_1 = DiagnosticMessage.new(
+    "LNR2010",
+    DiagnosticMessage.Error,
+    "Cannot redeclare global identifier '%s'"
+  ),
+  cannot_redeclare_existing_module_at_path_1 = DiagnosticMessage.new(
+    "LNR2011",
+    DiagnosticMessage.Error,
+    "Cannot redeclare existing module at path '%s'"
+  ),
+  cannot_find_module_1 = DiagnosticMessage.new(
+    "LNR2012",
+    DiagnosticMessage.Error,
+    "Cannot file module '%s'"
+  ),
+  module_1_has_no_exported_type_2 = DiagnosticMessage.new(
+    "LNR2013",
+    DiagnosticMessage.Error,
+    "Module '%s' has no exported type '%s'"
+  ),
+  module_1_has_no_exported_value_2 = DiagnosticMessage.new(
+    "LNR2014",
+    DiagnosticMessage.Error,
+    "Module '%s' has no exported value '%s'"
+  ),
+  import_declaration_conflicts_with_local_declaration_of_1 = DiagnosticMessage.new(
+    "LNR_2015",
+    DiagnosticMessage.Error,
+    "Import declaration conflicts with local declaration of '%s'"
+  ),
+  duplicate_source_files_with_path_1 = DiagnosticMessage.new(
+    "LNR_2016",
+    DiagnosticMessage.Error,
+    "Duplicate source files with path '%s'"
+  ),
 }
